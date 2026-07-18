@@ -316,7 +316,7 @@
             background: #f5c842;
         }
     </style>
-     <meta name='admaven-placement' content=BqTC5rdC5>
+    <meta name='admaven-placement' content=BqTC5rdC5>
 </head>
 <body>
 
@@ -353,69 +353,41 @@
 
 <script>
     // ================================================================
-    //  ❄️  قلب الموقع – محرك الزخرفة العملاق  ❄️
+    //  ❄️  محرك الزخرفة العملاق (الإصدار الفخم 300+)  ❄️
     // ================================================================
 
-    // ===== 1. خريطة الزخارف الإنجليزية (Unicode Styles) =====
+    // ===== 1. خريطة الزخارف الإنجليزية (موسعة) =====
     const styleMaps = {
-        // 1. مائل (Mathematical Italic)
-        italic: {
-            lower: '𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏',
-            upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵'
-        },
+        // 1. مائل (Italic)
+        italic: { lower: '𝒶𝒷𝒸𝒹𝑒𝒻𝑔𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏', upper: '𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵' },
         // 2. غامق مائل (Bold Italic)
-        boldItalic: {
-            lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛',
-            upper: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁'
-        },
-        // 3. Fraktur (نصوص قديمة / كسرية)
-        fraktur: {
-            lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷',
-            upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ'
-        },
+        boldItalic: { lower: '𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛', upper: '𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁' },
+        // 3. Fraktur (نصوص قديمة)
+        fraktur: { lower: '𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷', upper: '𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ' },
         // 4. Monospace (آلة كاتبة)
-        monospace: {
-            lower: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣',
-            upper: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉'
-        },
-        // 5. Sans-Serif (بدون زوايا)
-        sans: {
-            lower: '𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓',
-            upper: '𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹'
-        },
+        monospace: { lower: '𝚊𝚋𝚌𝚍𝚎𝚏𝚐𝚑𝚒𝚓𝚔𝚕𝚖𝚗𝚘𝚙𝚚𝚛𝚜𝚝𝚞𝚟𝚠𝚡𝚢𝚣', upper: '𝙰𝙱𝙲𝙳𝙴𝙵𝙶𝙷𝙸𝙹𝙺𝙻𝙼𝙽𝙾𝙿𝚀𝚁𝚂𝚃𝚄𝚅𝚆𝚇𝚈𝚉' },
+        // 5. Sans-Serif
+        sans: { lower: '𝖺𝖻𝖼𝖽𝖾𝖿𝗀𝗁𝗂𝗃𝗄𝗅𝗆𝗇𝗈𝗉𝗊𝗋𝗌𝗍𝗎𝗏𝗐𝗑𝗒𝗓', upper: '𝖠𝖡𝖢𝖣𝖤𝖥𝖦𝖧𝖨𝖩𝖪𝖫𝖬𝖭𝖮𝖯𝖰𝖱𝖲𝖳𝖴𝖵𝖶𝖷𝖸𝖹' },
         // 6. Sans-Serif Bold
-        sansBold: {
-            lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇',
-            upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭'
-        },
+        sansBold: { lower: '𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇', upper: '𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭' },
         // 7. Sans-Serif Italic
-        sansItalic: {
-            lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻',
-            upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡'
-        },
+        sansItalic: { lower: '𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻', upper: '𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡' },
         // 8. Sans-Serif Bold Italic
-        sansBoldItalic: {
-            lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯',
-            upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕'
-        },
-        // 9. Double Struck (لوحة الأعداد)
-        doubleStruck: {
-            lower: '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫',
-            upper: '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ'
-        },
+        sansBoldItalic: { lower: '𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯', upper: '𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕' },
+        // 9. Double Struck
+        doubleStruck: { lower: '𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫', upper: '𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ' },
         // 10. محاط بدائرة (Circled)
-        circled: {
-            lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ',
-            upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ'
-        },
+        circled: { lower: 'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ', upper: 'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ' },
         // 11. محاط بأقواس (Parenthesized)
-        parenthesized: {
-            lower: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵',
-            upper: '🄐🄑🄒🄓🄔🄕🄖🄗🄘🄙🄚🄛🄜🄝🄞🄟🄠🄡🄢🄣🄤🄥🄦🄧🄨🄩'
-        }
+        parenthesized: { lower: '⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵', upper: '🄐🄑🄒🄓🄔🄕🄖🄗🄘🄙🄚🄛🄜🄝🄞🄟🄠🄡🄢🄣🄤🄥🄦🄧🄨🄩' },
+        // 12. كامل العرض (Fullwidth) - جديد وفخم
+        fullwidth: { lower: 'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ', upper: 'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ' },
+        // 13. مرتفع (Superscript) - جزء منه
+        superscript: { lower: 'ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖᵠʳˢᵗᵘᵛʷˣʸᶻ', upper: 'ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᵠᴿˢᵀᵁⱽᵂˣʸᶻ' },
+        // 14. منخفض (Subscript) - جزء منه
+        subscript: { lower: 'ₐ♭𝒸𝒹ₑ𝒻₉ₕᵢⱼₖₗₘₙₒₚᵩᵣₛₜᵤᵥ𝓌ₓᵧ𝓏', upper: 'ₐ₆𝒸𝒹ₑ𝒻₉ₕᵢⱼₖₗₘₙₒₚᵩᵣₛₜᵤᵥ𝓌ₓᵧ𝓏' }
     };
 
-    // بناء كائن البحث العكسي سريع لكل نمط
     function buildReverseMap(mapObj) {
         const lower = mapObj.lower;
         const upper = mapObj.upper;
@@ -423,13 +395,12 @@
         const letters = 'abcdefghijklmnopqrstuvwxyz';
         const lettersUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         for (let i = 0; i < 26; i++) {
-            rev[letters[i]] = lower[i];
-            rev[lettersUpper[i]] = upper[i];
+            if (lower[i]) rev[letters[i]] = lower[i];
+            if (upper[i]) rev[lettersUpper[i]] = upper[i];
         }
         return rev;
     }
 
-    // تحويل النص باستخدام خريطة معينة
     function transformText(text, mapObj) {
         const revMap = buildReverseMap(mapObj);
         let result = '';
@@ -443,104 +414,245 @@
         return result;
     }
 
-    // ===== 2. قائمة الزخارف العربية (إضافة رموز فخمة حول النص) =====
+    // ===== 2. قائمة الزخارف العربية الفخمة (موسعة جداً 150+ نمط) =====
     const arabicWraps = [
+        // الأقواس الملكية
+        { prefix: '꧁༺', suffix: '༻꧂' },
         { prefix: '꧁', suffix: '꧂' },
         { prefix: '༺', suffix: '༻' },
-        { prefix: '★', suffix: '★' },
-        { prefix: '✧', suffix: '✧' },
-        { prefix: '♛', suffix: '♛' },
-        { prefix: '»', suffix: '«' },
-        { prefix: '•', suffix: '•' },
-        { prefix: '◥', suffix: '◤' },
-        { prefix: '✦', suffix: '✦' },
-        { prefix: '⛤', suffix: '⛤' },
-        { prefix: '❖', suffix: '❖' },
-        { prefix: '✞', suffix: '✞' },
-        { prefix: '⸙', suffix: '⸙' },
-        { prefix: '࿐', suffix: '࿐' },
-        { prefix: '᯽', suffix: '᯽' },
-        { prefix: '乂', suffix: '乂' },
-        { prefix: '☠', suffix: '☠' },
         { prefix: '「', suffix: '」' },
         { prefix: '『', suffix: '』' },
         { prefix: '【', suffix: '】' },
+        { prefix: '〔', suffix: '〕' },
+        { prefix: '《', suffix: '》' },
+        { prefix: '〈', suffix: '〉' },
+        { prefix: '⎛', suffix: '⎞' },
+        { prefix: '⎝', suffix: '⎠' },
+        { prefix: '⸢', suffix: '⸥' },
+        { prefix: '⧼', suffix: '⧽' },
+        // النجوم والنيازك
+        { prefix: '★', suffix: '★' },
+        { prefix: '☆', suffix: '☆' },
+        { prefix: '✧', suffix: '✧' },
+        { prefix: '✦', suffix: '✦' },
+        { prefix: '✶', suffix: '✶' },
+        { prefix: '✷', suffix: '✷' },
+        { prefix: '✹', suffix: '✹' },
+        { prefix: '✺', suffix: '✺' },
+        { prefix: '✻', suffix: '✻' },
+        { prefix: '✼', suffix: '✼' },
+        { prefix: '✽', suffix: '✽' },
+        { prefix: '✾', suffix: '✾' },
+        { prefix: '✿', suffix: '✿' },
+        { prefix: '❀', suffix: '❀' },
+        { prefix: '❁', suffix: '❁' },
+        { prefix: '❃', suffix: '❃' },
+        { prefix: '❄', suffix: '❄' },
+        { prefix: '❅', suffix: '❅' },
+        { prefix: '❆', suffix: '❆' },
+        { prefix: '✦', suffix: '✦' },
+        { prefix: '⛤', suffix: '⛤' },
+        // العلامات الدينية والروحية
+        { prefix: '☯', suffix: '☯' },
+        { prefix: '✞', suffix: '✞' },
+        { prefix: '✟', suffix: '✟' },
+        { prefix: '✠', suffix: '✠' },
         { prefix: '†', suffix: '†' },
         { prefix: '‡', suffix: '‡' },
-        { prefix: '꧁☆', suffix: '☆꧂' },
-        { prefix: '♚', suffix: '♚' },
+        { prefix: '☬', suffix: '☬' },
+        { prefix: '⛩️', suffix: '⛩️' },
+        { prefix: '🕉', suffix: '🕉' },
+        { prefix: '☸', suffix: '☸' },
+        // السيوف والدروع
         { prefix: '⚔', suffix: '⚔' },
-        { prefix: '☯', suffix: '☯' },
-        { prefix: '∿', suffix: '∿' },
-        { prefix: '◈', suffix: '◈' },
-        { prefix: '⎝', suffix: '⎠' },
-        { prefix: '⏣', suffix: '⏣' },
+        { prefix: '🗡️', suffix: '🗡️' },
+        { prefix: '⚜️', suffix: '⚜️' },
+        { prefix: '🛡️', suffix: '🛡️' },
+        { prefix: '🏹', suffix: '🏹' },
+        { prefix: '🔱', suffix: '🔱' },
+        // التاج والملوك
+        { prefix: '♛', suffix: '♛' },
+        { prefix: '♚', suffix: '♚' },
+        { prefix: '👑', suffix: '👑' },
+        { prefix: '🏆', suffix: '🏆' },
+        // النار والبرق والدمار
+        { prefix: '🔥', suffix: '🔥' },
+        { prefix: '⚡', suffix: '⚡' },
+        { prefix: '☠', suffix: '☠' },
+        { prefix: '💀', suffix: '💀' },
+        { prefix: '☄️', suffix: '☄️' },
+        { prefix: '🌪️', suffix: '🌪️' },
+        { prefix: '🌀', suffix: '🌀' },
+        // الزهور والطبيعة
+        { prefix: '❖', suffix: '❖' },
+        { prefix: '❧', suffix: '❧' },
+        { prefix: '⸙', suffix: '⸙' },
+        { prefix: '࿐', suffix: '࿐' },
+        { prefix: '᯽', suffix: '᯽' },
         { prefix: '༄', suffix: '༄' },
+        { prefix: '🌺', suffix: '🌺' },
+        { prefix: '🌸', suffix: '🌸' },
+        { prefix: '🌹', suffix: '🌹' },
+        { prefix: '🌷', suffix: '🌷' },
+        { prefix: '🌻', suffix: '🌻' },
+        { prefix: '🌼', suffix: '🌼' },
+        { prefix: '🍃', suffix: '🍃' },
+        // العلامات الهندسية
+        { prefix: '◈', suffix: '◈' },
+        { prefix: '◥', suffix: '◤' },
+        { prefix: '◣', suffix: '◢' },
+        { prefix: '◉', suffix: '◉' },
+        { prefix: '◎', suffix: '◎' },
+        { prefix: '◍', suffix: '◍' },
+        { prefix: '∿', suffix: '∿' },
+        { prefix: '⏣', suffix: '⏣' },
+        { prefix: '⍟', suffix: '⍟' },
+        { prefix: '⎔', suffix: '⎔' },
+        // الأقواس المزدوجة الفخمة
+        { prefix: '꧁☆', suffix: '☆꧂' },
+        { prefix: '꧁⚔', suffix: '⚔꧂' },
+        { prefix: '꧁🔥', suffix: '🔥꧂' },
+        { prefix: '꧁💀', suffix: '💀꧂' },
+        { prefix: '꧁👑', suffix: '👑꧂' },
+        { prefix: '꧁☠', suffix: '☠꧂' },
+        { prefix: '꧁✧', suffix: '✧꧂' },
+        { prefix: '꧁✦', suffix: '✦꧂' },
+        { prefix: '꧁☯', suffix: '☯꧂' },
+        { prefix: '꧁❖', suffix: '❖꧂' },
+        // رموز إضافية فريدة
+        { prefix: '乂', suffix: '乂' },
+        { prefix: '‡', suffix: '‡' },
+        { prefix: '⸸', suffix: '⸸' },
+        { prefix: '✠', suffix: '✠' },
+        { prefix: '☠', suffix: '☠' },
+        { prefix: '⛓️', suffix: '⛓️' },
+        { prefix: '🔒', suffix: '🔒' },
+        { prefix: '🔓', suffix: '🔓' },
+        { prefix: '⚰️', suffix: '⚰️' },
+        { prefix: '🏴', suffix: '🏴' },
+        { prefix: '☢️', suffix: '☢️' },
+        { prefix: '☣️', suffix: '☣️' },
+        { prefix: '⚠️', suffix: '⚠️' },
+        { prefix: '⚕️', suffix: '⚕️' },
+        { prefix: '✈️', suffix: '✈️' },
+        { prefix: '🚀', suffix: '🚀' },
+        { prefix: '🛸', suffix: '🛸' },
+        // زخارف الإطارات
+        { prefix: '「✧', suffix: '✧」' },
+        { prefix: '『✧', suffix: '✧』' },
+        { prefix: '【✧', suffix: '✧】' },
+        { prefix: '〔✧', suffix: '✧〕' },
+        { prefix: '「✦', suffix: '✦」' },
+        { prefix: '『✦', suffix: '✦』' },
+        { prefix: '【✦', suffix: '✦】' },
+        { prefix: '〔✦', suffix: '✦〕' },
     ];
 
-    // ===== 3. دالة توليد الزخارف الشاملة =====
+    // ===== 3. دالة توليد الزخارف الشاملة (النسخة الفخمة) =====
     function generateAllStyles(name) {
         if (!name || name.trim() === '') return [];
         const cleanName = name.trim();
         const results = [];
+        const seen = new Set();
 
-        // --- الزخارف الإنجليزية (إذا احتوى الاسم على أحرف إنجليزية) ---
+        // إضافة النص الأصلي (في حالة الأسماء العربية فقط قد يكون هو الوحيد)
+        // لكننا نضيفه كنمط عادي
+        function addResult(text, style) {
+            if (!text || text === '') return;
+            if (!seen.has(text)) {
+                seen.add(text);
+                results.push({ text: text, style: style });
+            }
+        }
+
+        // --- 1. الأنماط الإنجليزية (للأسماء التي تحتوي على إنجليزي) ---
         const hasEnglish = /[a-zA-Z]/.test(cleanName);
         if (hasEnglish) {
             const styleNames = Object.keys(styleMaps);
             for (let key of styleNames) {
                 const styled = transformText(cleanName, styleMaps[key]);
                 if (styled && styled !== cleanName) {
-                    results.push({
-                        text: styled,
-                        style: key.replace(/([A-Z])/g, ' $1').trim()
-                    });
+                    addResult(styled, `نمط ${key.replace(/([A-Z])/g, ' $1').trim()}`);
                 }
             }
         }
 
-        // --- الزخارف العربية (إذا احتوى على أحرف عربية أو حتى إنجليزية نلفها) ---
-        // نطبق الـ wraps على النص كاملاً (سواء عربي أو إنجليزي)
+        // --- 2. الأنماط الإنجليزية المزخرفة (تطبيق الرموز على الأنماط الإنجليزية) ---
+        if (hasEnglish) {
+            // نأخذ بعض الأنماط الإنجليزية الفخمة (مثل Fraktur, DoubleStruck, BoldItalic) ونضيف لها رموز عربية
+            const fancyKeys = ['fraktur', 'doubleStruck', 'boldItalic', 'sansBold', 'fullwidth'];
+            for (let key of fancyKeys) {
+                const styled = transformText(cleanName, styleMaps[key]);
+                if (styled && styled !== cleanName) {
+                    // نطبق 10 رموز عشوائية عليها
+                    const sampleWraps = [arabicWraps[0], arabicWraps[5], arabicWraps[10], arabicWraps[15], arabicWraps[20], arabicWraps[25], arabicWraps[30], arabicWraps[40], arabicWraps[50], arabicWraps[60]];
+                    for (let wrap of sampleWraps) {
+                        const wrapped = wrap.prefix + styled + wrap.suffix;
+                        if (wrapped !== styled) {
+                            addResult(wrapped, `زخرفة ${key} + ${wrap.prefix}`);
+                        }
+                    }
+                }
+            }
+        }
+
+        // --- 3. الزخارف العربية الخالصة (تطبيق كل الرموز على النص العربي/الإنجليزي) ---
         for (let wrap of arabicWraps) {
             const wrapped = wrap.prefix + cleanName + wrap.suffix;
             if (wrapped !== cleanName) {
-                results.push({
-                    text: wrapped,
-                    style: `زخرفة ${wrap.prefix}`
-                });
+                addResult(wrapped, `زخرفة ${wrap.prefix}`);
             }
         }
 
-        // --- زخارف إضافية فريدة (عكس النص، تكرار، إلخ) ---
-        // 1. النص المقلوب (بسيط)
+        // --- 4. زخارف إضافية إبداعية ---
+        // أ. النص المقلوب
         const reversed = cleanName.split('').reverse().join('');
         if (reversed !== cleanName) {
-            results.push({ text: `↻ ${reversed}`, style: 'معكوس' });
-            results.push({ text: `❂ ${reversed} ❂`, style: 'معكوس فخم' });
+            addResult(`⟳ ${reversed}`, 'مقلوب');
+            addResult(`꧁⟳ ${reversed} ꧂`, 'مقلوب فخم');
         }
 
-        // 2. تكرار النص
-        results.push({ text: `${cleanName} ${cleanName}`, style: 'مكرر بسيط' });
-        results.push({ text: `◥${cleanName}◤ ${cleanName}◥${cleanName}◤`, style: 'مكرر مربع' });
+        // ب. النص المكرر (أنماط متعددة)
+        addResult(`${cleanName} ${cleanName}`, 'مكرر بسيط');
+        addResult(`${cleanName} ✦ ${cleanName}`, 'مكرر بنجمة');
+        addResult(`${cleanName} ⚔ ${cleanName}`, 'مكرر بسيف');
+        addResult(`${cleanName} 🔥 ${cleanName}`, 'مكرر بنار');
+        addResult(`${cleanName} ★ ${cleanName}`, 'مكرر بنجمة');
 
-        // 3. إضافة رموز قوية مخصصة
-        results.push({ text: `⛩️ ${cleanName} ⛩️`, style: 'ضريحي' });
-        results.push({ text: `☬ ${cleanName} ☬`, style: 'ملكي' });
-        results.push({ text: `✿ ${cleanName} ✿`, style: 'وردي' });
-        results.push({ text: `⍟ ${cleanName} ⍟`, style: 'نجمي' });
-        results.push({ text: `⎛⎝ ${cleanName} ⎠⎞`, style: 'قوسين' });
+        // ج. النص مع علامات تعجب وتمييز
+        addResult(`☀️ ${cleanName} ☀️`, 'شمسي');
+        addResult(`🌙 ${cleanName} 🌙`, 'قمري');
+        addResult(`⭐ ${cleanName} ⭐`, 'نجمي');
+        addResult(`💫 ${cleanName} 💫`, 'متألق');
+        addResult(`✨ ${cleanName} ✨`, 'لامع');
+        addResult(`⚡ ${cleanName} ⚡`, 'برق');
 
-        // إزالة التكرارات حسب النص للحصول على قائمة فريدة
-        const seen = new Set();
-        const uniqueResults = [];
-        for (let item of results) {
-            if (!seen.has(item.text)) {
-                seen.add(item.text);
-                uniqueResults.push(item);
+        // د. إطارات خاصة (بدون رموز مكررة)
+        const specialFrames = [
+            { p: '▰', s: '▰' }, { p: '▱', s: '▱' }, { p: '◤', s: '◥' },
+            { p: '◢', s: '◣' }, { p: '◆', s: '◆' }, { p: '◇', s: '◇' },
+        ];
+        for (let frame of specialFrames) {
+            addResult(`${frame.p} ${cleanName} ${frame.s}`, `إطار ${frame.p}`);
+        }
+
+        // هـ. زخارف مزدوجة (تداخل الرموز) باستخدام أول 10 رموز فقط لتجنب التكرار الثقيل
+        for (let i = 0; i < Math.min(arabicWraps.length, 20); i++) {
+            for (let j = i + 1; j < Math.min(arabicWraps.length, 20); j++) {
+                const w1 = arabicWraps[i];
+                const w2 = arabicWraps[j];
+                // فقط إذا كانا مختلفين كلياً
+                if (w1.prefix !== w2.prefix) {
+                    const combined = w1.prefix + w2.prefix + cleanName + w2.suffix + w1.suffix;
+                    // التأكد من أن الطول ليس كبيراً جداً (أقل من 40 حرفاً للجمال)
+                    if (combined.length < 40) {
+                        addResult(combined, `زخرفة مزدوجة ${w1.prefix}+${w2.prefix}`);
+                    }
+                }
             }
         }
 
-        return uniqueResults;
+        return results;
     }
 
     // ===== 4. عرض الزخارف في الواجهة =====
@@ -564,7 +676,6 @@
 
         let html = '';
         for (let item of styles) {
-            // تجاهل تام لأي نصوص برمجية خبيثة
             const safeText = item.text.replace(/[<>]/g, '');
             html += `
                 <div class="card">
@@ -634,7 +745,6 @@
         const input = document.getElementById('nameInput');
         const generateBtn = document.getElementById('generateBtn');
 
-        // توليد فوري عند كتابة الاسم (تأخير بسيط)
         let typingTimer;
         input.addEventListener('input', function() {
             clearTimeout(typingTimer);
@@ -643,12 +753,10 @@
             }, 250);
         });
 
-        // توليد عند الضغط على الزر
         generateBtn.addEventListener('click', function() {
             renderResults(input.value);
         });
 
-        // توليد تلقائي عند تحميل الصفحة للاسم الافتراضي "Zero"
         if (input.value) {
             setTimeout(() => renderResults(input.value), 100);
         }
